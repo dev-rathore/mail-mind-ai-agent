@@ -1,0 +1,57 @@
+# --- Python artifacts ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# --- Virtual environment ---
+.venv/
+.env/
+
+# --- Env & secrets ---
+.env
+.env.local
+token.json
+credentials.json
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- macOS ---
+.DS_Store
+
+# --- Logs ---
+*.log
+
+# --- Ruff cache ---
+.ruff_cache/
+
+# --- Unit test cache ---
+.coverage
+htmlcov/
+.cache/
+pytest_cache/
+
+# --- Docker ---
+*.tar
+*.img
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+
+# --- GitHub actions cache ---
+*.bak
+*.swp
+*.tmp
+*.orig
+
+# --- Notes ---
+notes.txt

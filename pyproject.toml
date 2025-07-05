@@ -1,0 +1,30 @@
+[project]
+name = "mail-mind-ai-agent"
+version = "0.1.0"
+description = "An agentic AI to process and classify important emails."
+authors = [{ name = "Devender Singh Rathore", email = "rathoredvd3001@gmail.com" }]
+dependencies = [
+    "google-api-python-client",
+    "google-auth",
+    "google-auth-oauthlib",
+    "google-generativeai",
+    "python-dotenv",
+    "requests",
+    "discord-webhook",
+    "yapf"
+]
+
+[project.scripts]
+mail-mind-ai-agent = "main:run_agent"
+
+[tool.setuptools]
+packages = ["agents", "services"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.format]
+indent-style = "space"
+
+[tool.uv]
+# If using uv, install with `pip install uv`
