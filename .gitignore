@@ -18,6 +18,7 @@ build/
 .env.local
 token.json
 credentials.json
+token.base64.txt
 
 # --- IDEs & Editors ---
 .vscode/

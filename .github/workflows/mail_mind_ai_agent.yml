@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: uv pip install -e . --system
 
+      - name: Restore Gmail token
+        run: echo "${{ secrets.GMAIL_TOKEN_BASE64 }}" | base64 -d > token.json
+
       - name: Run Mail Mind AI Agent
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
