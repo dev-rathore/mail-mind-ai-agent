@@ -30,7 +30,7 @@ cd mail-mind-ai-agent
 ### 2. Create a virtual environment (recommended)
 
 ```bash
-python3 -m venv .venv # or python3 -m venv .venv
+python3 -m venv .venv # or python -m venv .venv on Windows
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 ```
 
