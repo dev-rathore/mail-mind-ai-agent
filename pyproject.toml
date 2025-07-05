@@ -15,10 +15,17 @@ dependencies = [
 ]
 
 [project.scripts]
-mail-mind-ai-agent = "main:run_agent"
+mail-mind-ai-agent = "app.main:run_agent"
 
-[tool.setuptools]
-packages = ["agents", "services"]
+# [tool.setuptools]
+# packages = ["app", "app.agents", "app.services"]
+
+[tool.setuptools.packages.find]
+where = ["app"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [tool.ruff]
 line-length = 100

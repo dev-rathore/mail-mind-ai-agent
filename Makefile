@@ -1,15 +1,25 @@
 # Run commands via `make <target>`
+
 install:
 	uv pip install -e .
 
 run:
-	python main.py
+	python app/main.py
+
+cli:
+	mail-mind-ai-agent
 
 format:
 	ruff format .
 
 lint:
-	ruff .
+	ruff check .
+
+docker-build:
+	docker build -t mail-mind-ai-agent .
+
+docker-run:
+	docker run --env-file .env mail-mind-ai-agent
 
 deploy:
-	echo "Deployment script here"
+	echo "Add deployment script here"
