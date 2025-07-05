@@ -1,0 +1,35 @@
+# GitHub Actions workflow to run daily at 8am UTC and on manual trigger
+
+name: Mail Mind AI Agent
+
+on:
+  schedule:
+    - cron: "0 8 * * *" # Runs every day at 8:00 AM UTC
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install dependencies
+        run: uv pip install -e .
+
+      - name: Run Mail Mind AI Agent
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: mail-mind-ai-agent
